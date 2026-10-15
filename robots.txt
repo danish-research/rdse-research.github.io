@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://danish-research.github.io/rdse-research.github.io/sitemap.xml
