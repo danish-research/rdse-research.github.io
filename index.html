@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RDSE: Real-Time Directional Speech Enhancement Framework for Dual-Mic Commodity Smartphones</title>
+    <!-- Google Fonts for Modern Academic Look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/jpeg" href="assets/rdse_minimal_logo.jpg">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <!-- Brand Logo (Top Left) -->
+            <a href="#" class="nav-brand" aria-label="RDSE Home">
+                <img src="assets/rdse_minimal_logo.jpg" alt="RDSE Logo" class="nav-logo">
+                <span class="nav-brand-text">RDSE</span>
+            </a>
+
+            <div class="nav-links">
+                <a href="#video-demo" class="nav-link">Real-Time Deployment</a>
+                <a href="#results-audio" class="nav-link">Controlled Evaluation</a>
+                <a href="#quantitative" class="nav-link">Quantitative Results</a>
+                <a href="#abstract" class="nav-link">Abstract</a>
+                <a href="#methodology" class="nav-link">Methodology</a>
+                <a href="#citation" class="nav-link">Citation</a>
+            </div>
+            <!-- Theme Toggle -->
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Dark Mode">
+                <i class="fa-solid fa-moon" id="theme-icon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <h1 class="paper-title">RDSE: Real-Time Directional Speech Enhancement Framework for Dual-Mic Commodity
+                Smartphones</h1>
+            <p class="venue">Accepted at <strong>IECON 2026</strong></p>
+
+            <div class="authors">
+                <span class="author"><a href="https://scholar.google.com/citations?user=4I6WXz8AAAAJ&hl=en"
+                        target="_blank" rel="noopener noreferrer">Chinmay
+                        Deo</a><sup>1</sup></span>
+                <span class="author"><a href="mailto:mahajandanish581@gmail.com" target="_blank"
+                        rel="noopener noreferrer">Danish Mahajan</a><sup>1</sup></span>
+                <span class="author"><a href="https://scholar.google.com/citations?user=MHTJdJMAAAAJ" target="_blank"
+                        rel="noopener noreferrer">Soudeep
+                        Ghoshal</a><sup>2</sup></span>
+                <span class="author"><a href="https://scholar.google.com/citations?user=jSol3hgAAAAJ&hl=en"
+                        target="_blank" rel="noopener noreferrer">Himanshu
+                        Buckchash</a><sup>3</sup></span>
+            </div>
+
+            <div class="affiliations">
+                <span class="affiliation"><sup>1</sup>National Institute of Technology Jalandhar, India</span>
+                <span class="affiliation"><sup>2</sup>Kalinga Institute of Industrial Technology, Bhubaneswar,
+                    India</span>
+                <span class="affiliation"><sup>3</sup>IMC University of Applied Sciences Krems, Austria</span>
+            </div>
+
+            <div class="action-badges">
+                <a href="https://arxiv.org/abs/2610.12476" target="_blank" rel="noopener noreferrer"
+                    class="btn btn-outline"><i class="fa-solid fa-file-pdf"></i> arXiv Paper</a>
+                <a href="https://github.com/Chinmay-Deo-2004/RDSE" target="_blank" rel="noopener noreferrer"
+                    class="btn btn-outline"><i class="fa-brands fa-github"></i> Code</a>
+                <a href="https://huggingface.co/datasets/rdse-research/SpARZ" target="_blank" rel="noopener noreferrer"
+                    class="btn btn-outline"><i class="fa-solid fa-database"></i> SpARZ Dataset</a>
+                <a href="#video-demo" class="btn btn-primary"><i class="fa-solid fa-play"></i> Demo Video</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Real-World Video Demo -->
+    <section class="section grey-bg" id="video-demo">
+        <div class="container">
+            <h2 class="section-title">Real-Time Deployment & Live Demo</h2>
+            <p class="section-subtitle">Real-world validation demonstrating robust directional speech enhancement in
+                uncontrolled environments.</p>
+
+            <div class="video-container">
+                <!-- YOUTUBE VIDEO EMBED -->
+                <div class="video-embed-container">
+                    <iframe src="https://www.youtube.com/embed/0Gy1O6jGndo" title="RDSE Real-World Demo" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <h3 class="mt-4" style="text-align: center;">Live Stream Audio (English)</h3>
+            <div class="audio-grid" style="grid-template-columns: 1fr; max-width: 400px; margin: 16px auto;">
+                <div class="audio-card highlighted">
+                    <h3>RDSE Enhanced Output</h3>
+                    <audio controls src="assets/audio/Live_test_result(English).wav"></audio>
+                </div>
+            </div>
+
+            <h3 class="mt-4" style="text-align: center;">Real-World Mobile Recording (Marathi)</h3>
+            <p class="section-subtitle" style="margin-bottom: 16px;">Additional testing using noisy real-world
+                recordings (no video).</p>
+            <div class="audio-grid" style="max-width: 800px; margin: 0 auto;">
+                <div class="audio-card">
+                    <h3>Noisy Input Mixture</h3>
+                    <audio controls src="assets/audio/Input_from_live_noisy_real%20world%20data.m4a"></audio>
+                </div>
+                <div class="audio-card highlighted">
+                    <h3>RDSE Enhanced Output</h3>
+                    <audio controls src="assets/audio/Processed_output_of_live_noisy_real%20world%20data.wav"></audio>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SpARZ Dataset Interactive Results -->
+    <section class="section" id="results-audio">
+        <div class="container">
+            <h2 class="section-title">Controlled Evaluation (SpARZ100 Dataset)</h2>
+            <p class="section-subtitle">We introduce SpARZ100, a controlled dataset isolating anechoic and reverberant
+                conditions for systematic benchmarking.</p>
+
+            <!-- Example 1: Anechoic -->
+            <div class="result-block">
+                <h3>Scenario: Anechoic Condition (RT60 = 0.0s)</h3>
+                <div class="audio-grid">
+                    <div class="audio-card">
+                        <span>Target Speech</span>
+                        <audio controls src="assets/audio/target_clean_rt60_0.0.wav"></audio>
+                    </div>
+                    <div class="audio-card">
+                        <span>Mixture (Mic 1)</span>
+                        <audio controls src="assets/audio/mixture_rt60_0.0.wav"></audio>
+                    </div>
+                    <div class="audio-card highlighted">
+                        <span>RDSE Output</span>
+                        <audio controls src="assets/audio/output_enhanced_rt60_0.0.wav"></audio>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example 2: Reverberant -->
+            <div class="result-block mt-4">
+                <h3>Scenario: Reverberant Condition (RT60 = 0.5s)</h3>
+                <div class="audio-grid">
+                    <div class="audio-card">
+                        <span>Target Speech</span>
+                        <audio controls src="assets/audio/target_clean_rt60_0.5.wav"></audio>
+                    </div>
+                    <div class="audio-card">
+                        <span>Mixture (Mic 1)</span>
+                        <audio controls src="assets/audio/mixture_rt60_0.5.wav"></audio>
+                    </div>
+                    <div class="audio-card highlighted">
+                        <span>RDSE Output</span>
+                        <audio controls src="assets/audio/output_enhanced_rt60_0.5.wav"></audio>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quantitative Results -->
+    <section class="section grey-bg" id="quantitative">
+        <div class="container">
+            <h2 class="section-title">Quantitative Results</h2>
+            <div class="table-responsive">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Method</th>
+                            <th>STOI</th>
+                            <th>ViSQOL</th>
+                            <th>PESQ</th>
+                            <th>Time (s)</th>
+                            <th>Real-Time</th>
+                            <th>Mic Setup</th>
+                            <th>Dataset</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Anechoic -->
+                        <tr class="section-row">
+                            <td colspan="8"><strong>Anechoic (RT60 = 0.0 s)</strong></td>
+                        </tr>
+                        <tr class="highlight-row">
+                            <td><strong>RDSE (Dereverb-off)</strong></td>
+                            <td><strong>0.7754</strong></td>
+                            <td>2.0053</td>
+                            <td><strong>2.5755</strong></td>
+                            <td>3.95</td>
+                            <td>✓</td>
+                            <td>2-mic</td>
+                            <td>SpARZ100</td>
+                        </tr>
+                        <tr>
+                            <td>RDSE (Dereverb-on)</td>
+                            <td>0.7356</td>
+                            <td><strong>2.0482</strong></td>
+                            <td>0.8789</td>
+                            <td>10.11</td>
+                            <td>✓</td>
+                            <td>2-mic</td>
+                            <td>SpARZ100</td>
+                        </tr>
+                        <tr>
+                            <td>SepFormer [30]</td>
+                            <td>0.5015</td>
+                            <td>1.5779</td>
+                            <td>1.6239</td>
+                            <td>22.79</td>
+                            <td>×</td>
+                            <td>1-mic</td>
+                            <td>SpARZ100</td>
+                        </tr>
+                        <tr>
+                            <td>FasNet-TAC [31]</td>
+                            <td>0.4494</td>
+                            <td>1.5670</td>
+                            <td>1.0780</td>
+                            <td>3.50</td>
+                            <td>×</td>
+                            <td>2-mic</td>
+                            <td>SpARZ100</td>
+                        </tr>
+                        <tr>
+                            <td>Nair et al. (2019) [1]</td>
+                            <td>0.7100</td>
+                            <td>—</td>
+                            <td>2.0400</td>
+                            <td>—</td>
+                            <td>×</td>
+                            <td>6-mic</td>
+                            <td>AVSpeech</td>
+                        </tr>
+                        <tr>
+                            <td>Li et al. (2025) [23]</td>
+                            <td>0.8400</td>
+                            <td>—</td>
+                            <td>2.0300</td>
+                            <td>—</td>
+                            <td>×</td>
+                            <td>2-mic</td>
+                            <td>VoxCeleb2</td>
+                        </tr>
+                        <tr>
+                            <td>Ephrat et al. (2018) [4]</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>2.4200</td>
+                            <td>—</td>
+                            <td>×</td>
+                            <td>1-mic</td>
+                            <td>TCD-TIMIT</td>
+                        </tr>
+                        <!-- Reverberant -->
+                        <tr class="section-row">
+                            <td colspan="8"><strong>Reverberant (RT60 = 0.5 s)</strong></td>
+                        </tr>
+                        <tr class="highlight-row">
+                            <td><strong>RDSE (Dereverb-off)</strong></td>
+                            <td><strong>0.5539</strong></td>
+                            <td>1.8710</td>
+                            <td><strong>1.8185</strong></td>
+                            <td>3.69</td>
+                            <td>✓</td>
+                            <td>2-mic</td>
+                            <td>SpARZ100</td>
+                        </tr>
+                        <tr>
+                            <td>RDSE (Dereverb-on)</td>
+                            <td>0.5391</td>
+                            <td><strong>1.9160</strong></td>
+                            <td>0.8527</td>
+                            <td>6.21</td>
+                            <td>✓</td>
+                            <td>2-mic</td>
+                            <td>SpARZ100</td>
+                        </tr>
+                        <tr>
+                            <td>SepFormer [30]</td>
+                            <td>0.4761</td>
+                            <td>1.8253</td>
+                            <td>1.2387</td>
+                            <td>25.35</td>
+                            <td>×</td>
+                            <td>1-mic</td>
+                            <td>SpARZ100</td>
+                        </tr>
+                        <tr>
+                            <td>FasNet-TAC [31]</td>
+                            <td>0.4332</td>
+                            <td>1.5856</td>
+                            <td>1.0820</td>
+                            <td>3.31</td>
+                            <td>×</td>
+                            <td>2-mic</td>
+                            <td>SpARZ100</td>
+                        </tr>
+                        <tr>
+                            <td>Nair et al. (2019) [1]</td>
+                            <td>0.5900</td>
+                            <td>—</td>
+                            <td>2.0000</td>
+                            <td>—</td>
+                            <td>×</td>
+                            <td>6-mic</td>
+                            <td>AVSpeech</td>
+                        </tr>
+                        <tr>
+                            <td>Li et al. (2025) [23]</td>
+                            <td>0.6000</td>
+                            <td>—</td>
+                            <td>1.5400</td>
+                            <td>—</td>
+                            <td>×</td>
+                            <td>2-mic</td>
+                            <td>VoxCeleb2</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="caption mt-2">Table 1: Comparative evaluation against prior work on the SpARZ100 dataset.
+                Inference time is mean seconds per 5-second sample.</p>
+        </div>
+    </section>
+
+    <!-- Teaser & Abstract Section -->
+    <section class="section" id="abstract">
+        <div class="container layout-2-col">
+            <div class="teaser-visual">
+                <!-- FIGURE 1 TEASER -->
+                <img src="assets/teaser.png" alt="RDSE Overlay-guided Mode"
+                    style="width: 100%; border-radius: var(--radius); box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                <p class="caption">Figure 1: The overlay-guided interaction mode of RDSE for real-time target selection.
+                </p>
+            </div>
+            <div class="abstract-content">
+                <h2>Abstract</h2>
+                <p>
+                    Audio-visual zooming on mobile devices is fundamentally constrained by limited microphone count,
+                    compute resource, unknown array geometry, and weak assumptions on real-world acoustic conditions. We
+                    present RDSE: Real-Time Directional Speech Enhancement Framework, a hybrid pipeline that combines
+                    traditional signal processing and modern machine learning methods for dual-microphone low-end
+                    smartphones. Unlike tightly coupled AV systems that continuously use visual feeds or embeddings,
+                    RDSE decouples visual interaction from feature inference, using camera input solely to parameterize
+                    the steering vector for spatial filtering. The proposed system uses four modules: dereverberation
+                    network, a beamformer with a temporal convolutional network, and a MetricGAN based denoiser.
+                    Extensive evaluation on benchmark data and real-world recordings demonstrates effective zooming
+                    without precise geometry calibration.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Methodology Section -->
+    <section class="section grey-bg" id="methodology">
+        <div class="container">
+            <h2 class="section-title">Methodology</h2>
+            <!-- FIGURE 2 ARCHITECTURE -->
+            <img src="assets/architecture.png" alt="RDSE Architecture Block Diagram"
+                style="width: 100%; border-radius: var(--radius); box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+            <p class="caption">Figure 2: Block diagram of the proposed RDSE processing pipeline.</p>
+
+            <div class="method-text">
+                <p>The RDSE pipeline integrates classical spatial filtering with modular, pretrained neural enhancement
+                    stages in a cascaded architecture operating on dual-microphone audio. The core components include:
+                </p>
+                <ul>
+                    <li><strong>Dereverberation (U-Net):</strong> Applied independently to each microphone channel to
+                        suppress late reflections and stabilize spatial covariance estimation.</li>
+                    <li><strong>MVDR Beamforming:</strong> Provides spatial selectivity based on a user-specified
+                        listening direction, without requiring precise geometric calibration.</li>
+                    <li><strong>Speaker Extraction (Conv-TasNet):</strong> A temporal convolutional network that refines
+                        the beamformer output by extracting the dominant target speaker.</li>
+                    <li><strong>Denoising (MetricGAN):</strong> A final stage that estimates a magnitude mask to
+                        suppress residual non-speech components and improve perceptual quality.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Citation Section -->
+    <section class="section" id="citation">
+        <div class="container">
+            <h2 class="section-title">Citation</h2>
+            <div class="bibtex-container" style="position: relative;">
+                <button id="copy-bibtex" class="copy-btn" aria-label="Copy BibTeX">
+                    <i class="fa-regular fa-copy"></i> Copy
+                </button>
+                <pre><code id="bibtex-code">@misc{deo2026rdserealtimedirectionalspeech,
+      title={RDSE: Real-Time Directional Speech Enhancement Framework for Dual-Mic Commodity Smartphones}, 
+      author={Chinmay Deo and Danish Mahajan and Soudeep Ghoshal and Himanshu Buckchash},
+      year={2026},
+      eprint={2610.12476},
+      archivePrefix={arXiv},
+      primaryClass={cs.SD},
+      url={https://arxiv.org/abs/2610.12476}, 
+}</code></pre>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 RDSE Authors &bull; Accepted at <strong>IEEE IECON 2026</strong></p>
+        </div>
+    </footer>
+
+    <!-- Theme Toggle Script -->
+    <script>
+        const toggleBtn = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const htmlElement = document.documentElement;
+
+        // Check for saved theme or system preference
+        const savedTheme = localStorage.getItem('theme');
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+            htmlElement.setAttribute('data-theme', 'dark');
+            themeIcon.classList.replace('fa-moon', 'fa-sun');
+        }
+
+        toggleBtn.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            if (currentTheme === 'dark') {
+                htmlElement.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'light');
+                themeIcon.classList.replace('fa-sun', 'fa-moon');
+            } else {
+                htmlElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
+            }
+        });
+
+        // Copy BibTeX functionality
+        const copyBtn = document.getElementById('copy-bibtex');
+        const bibtexCode = document.getElementById('bibtex-code');
+
+        copyBtn.addEventListener('click', () => {
+            navigator.clipboard.writeText(bibtexCode.innerText).then(() => {
+                const originalHtml = copyBtn.innerHTML;
+                copyBtn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+                setTimeout(() => {
+                    copyBtn.innerHTML = originalHtml;
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy text: ', err);
+            });
+        });
+    </script>
+</body>
+
+</html>
