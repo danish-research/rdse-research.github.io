@@ -79,6 +79,11 @@
     }
     </script>
 
+    <!-- Preconnect for Performance Optimization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
     <!-- Google Fonts for Modern Academic Look -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- FontAwesome for Icons -->
@@ -94,16 +99,16 @@
         <div class="nav-container">
             <!-- Brand Logo (Top Left) -->
             <a href="#" class="nav-brand" aria-label="RDSE Home">
-                <img src="assets/rdse_minimal_logo.jpg" alt="RDSE Logo" class="nav-logo">
+                <img src="assets/rdse_minimal_logo.jpg" alt="RDSE Logo" class="nav-logo" width="32" height="32" decoding="async">
                 <span class="nav-brand-text">RDSE</span>
             </a>
 
             <div class="nav-links">
                 <a href="#video-demo" class="nav-link">Real-Time Deployment</a>
-                <a href="#results-audio" class="nav-link">Controlled Evaluation</a>
-                <a href="#quantitative" class="nav-link">Quantitative Results</a>
-                <a href="#abstract" class="nav-link">Abstract</a>
-                <a href="#methodology" class="nav-link">Methodology</a>
+                <a href="#results-audio" class="nav-link">Acoustic Benchmarks</a>
+                <a href="#quantitative" class="nav-link">Comparative Metrics</a>
+                <a href="#abstract" class="nav-link">Overview</a>
+                <a href="#methodology" class="nav-link">Architecture</a>
                 <a href="#citation" class="nav-link">Citation</a>
             </div>
             <!-- Theme Toggle -->
@@ -156,7 +161,7 @@
     <!-- Real-World Video Demo -->
     <section class="section grey-bg" id="video-demo">
         <div class="container">
-            <h2 class="section-title">Real-Time Deployment & Live Demo</h2>
+            <h2 class="section-title">Real-Time Smartphone Deployment</h2>
             <p class="section-subtitle">Real-world validation demonstrating robust directional speech enhancement in
                 uncontrolled environments.</p>
 
@@ -165,7 +170,7 @@
                 <div class="video-embed-container">
                     <iframe src="https://www.youtube.com/embed/0Gy1O6jGndo" title="RDSE Real-World Demo" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen>
+                        allowfullscreen loading="lazy">
                     </iframe>
                 </div>
             </div>
@@ -174,7 +179,7 @@
             <div class="audio-grid" style="grid-template-columns: 1fr; max-width: 400px; margin: 16px auto;">
                 <div class="audio-card highlighted">
                     <h3>RDSE Enhanced Output</h3>
-                    <audio controls src="assets/audio/Live_test_result(English).wav"></audio>
+                    <audio controls preload="none" src="assets/audio/Live_test_result(English).wav"></audio>
                 </div>
             </div>
 
@@ -184,11 +189,11 @@
             <div class="audio-grid" style="max-width: 800px; margin: 0 auto;">
                 <div class="audio-card">
                     <h3>Noisy Input Mixture</h3>
-                    <audio controls src="assets/audio/Input_from_live_noisy_real%20world%20data.m4a"></audio>
+                    <audio controls preload="none" src="assets/audio/Input_from_live_noisy_real%20world%20data.m4a"></audio>
                 </div>
                 <div class="audio-card highlighted">
                     <h3>RDSE Enhanced Output</h3>
-                    <audio controls src="assets/audio/Processed_output_of_live_noisy_real%20world%20data.wav"></audio>
+                    <audio controls preload="none" src="assets/audio/Processed_output_of_live_noisy_real%20world%20data.wav"></audio>
                 </div>
             </div>
         </div>
@@ -197,7 +202,7 @@
     <!-- SpARZ Dataset Interactive Results -->
     <section class="section" id="results-audio">
         <div class="container">
-            <h2 class="section-title">Controlled Evaluation (SpARZ100 Dataset)</h2>
+            <h2 class="section-title">Acoustic Benchmarks (SpARZ100)</h2>
             <p class="section-subtitle">We introduce SpARZ100, a controlled dataset isolating anechoic and reverberant
                 conditions for systematic benchmarking.</p>
 
@@ -207,15 +212,15 @@
                 <div class="audio-grid">
                     <div class="audio-card">
                         <span>Target Speech</span>
-                        <audio controls src="assets/audio/target_clean_rt60_0.0.wav"></audio>
+                        <audio controls preload="none" src="assets/audio/target_clean_rt60_0.0.wav"></audio>
                     </div>
                     <div class="audio-card">
                         <span>Mixture (Mic 1)</span>
-                        <audio controls src="assets/audio/mixture_rt60_0.0.wav"></audio>
+                        <audio controls preload="none" src="assets/audio/mixture_rt60_0.0.wav"></audio>
                     </div>
                     <div class="audio-card highlighted">
                         <span>RDSE Output</span>
-                        <audio controls src="assets/audio/output_enhanced_rt60_0.0.wav"></audio>
+                        <audio controls preload="none" src="assets/audio/output_enhanced_rt60_0.0.wav"></audio>
                     </div>
                 </div>
             </div>
@@ -226,15 +231,15 @@
                 <div class="audio-grid">
                     <div class="audio-card">
                         <span>Target Speech</span>
-                        <audio controls src="assets/audio/target_clean_rt60_0.5.wav"></audio>
+                        <audio controls preload="none" src="assets/audio/target_clean_rt60_0.5.wav"></audio>
                     </div>
                     <div class="audio-card">
                         <span>Mixture (Mic 1)</span>
-                        <audio controls src="assets/audio/mixture_rt60_0.5.wav"></audio>
+                        <audio controls preload="none" src="assets/audio/mixture_rt60_0.5.wav"></audio>
                     </div>
                     <div class="audio-card highlighted">
                         <span>RDSE Output</span>
-                        <audio controls src="assets/audio/output_enhanced_rt60_0.5.wav"></audio>
+                        <audio controls preload="none" src="assets/audio/output_enhanced_rt60_0.5.wav"></audio>
                     </div>
                 </div>
             </div>
@@ -244,7 +249,7 @@
     <!-- Quantitative Results -->
     <section class="section grey-bg" id="quantitative">
         <div class="container">
-            <h2 class="section-title">Quantitative Results</h2>
+            <h2 class="section-title">Comparative Performance Metrics</h2>
             <div class="table-responsive">
                 <table class="data-table">
                     <thead>
@@ -411,13 +416,13 @@
         <div class="container layout-2-col">
             <div class="teaser-visual">
                 <!-- FIGURE 1 TEASER -->
-                <img src="assets/teaser.png" alt="RDSE Overlay-guided Mode"
+                <img src="assets/teaser.png" alt="RDSE Overlay-guided Mode" loading="lazy" decoding="async"
                     style="width: 100%; border-radius: var(--radius); box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
                 <p class="caption">Figure 1: The overlay-guided interaction mode of RDSE for real-time target selection.
                 </p>
             </div>
             <div class="abstract-content">
-                <h2>Abstract</h2>
+                <h2>Overview & Research Abstract</h2>
                 <p>
                     Audio-visual zooming on mobile devices is fundamentally constrained by limited microphone count,
                     compute resource, unknown array geometry, and weak assumptions on real-world acoustic conditions. We
@@ -437,9 +442,9 @@
     <!-- Methodology Section -->
     <section class="section grey-bg" id="methodology">
         <div class="container">
-            <h2 class="section-title">Methodology</h2>
+            <h2 class="section-title">Architecture & Methodology</h2>
             <!-- FIGURE 2 ARCHITECTURE -->
-            <img src="assets/architecture.png" alt="RDSE Architecture Block Diagram"
+            <img src="assets/architecture.png" alt="RDSE Architecture Block Diagram" loading="lazy" decoding="async"
                 style="width: 100%; border-radius: var(--radius); box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
             <p class="caption">Figure 2: Block diagram of the proposed RDSE processing pipeline.</p>
 
@@ -464,7 +469,7 @@
     <!-- Citation Section -->
     <section class="section" id="citation">
         <div class="container">
-            <h2 class="section-title">Citation</h2>
+            <h2 class="section-title">BibTeX Citation</h2>
             <div class="bibtex-container" style="position: relative;">
                 <button id="copy-bibtex" class="copy-btn" aria-label="Copy BibTeX">
                     <i class="fa-regular fa-copy"></i> Copy
